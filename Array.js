@@ -29,8 +29,8 @@ console.log(i.reverse());  // reverse() is used to reverse the given array
   
 //pop
 const j = [1,2,3,4,5,6,7];
-j.pop(); //pop() is used to delete the last element
-console.log(j);
+z = j.pop(5); //pop() is used to delete the last element
+console.log(z);
 
 //shift()
 const  k = [1,2,3,4,5]
