@@ -11,7 +11,7 @@ console.log(d,typeof d);
 
 //Random  element
 const e = [1,2,3,4,5];
-const f = Math.floor(Math.random(e)*e.length);
+const f = Math.floor(Math.random()*e.length);
 console.log(f);
 
 //length

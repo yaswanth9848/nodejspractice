@@ -1,7 +1,7 @@
-const a = "Yaswanth"
+const a = "Arun"
 switch(a)
 {
-    case  'Roshan' :
+    case  'Roshan' == 'Arun' :
     {
     console.log("Mismatch");
     }
@@ -16,9 +16,9 @@ switch(a)
         console.log("Mismatch");
     }
     break;
-    case   "Arun":
+    case   'Arun '== 'Arun':
     {
-        console.log("Mismatch");
+        console.log("Match");
     }
     break;
     case  "faiz" :

@@ -19,9 +19,9 @@ console.log((h+2*i));
 
 j = 10;
 k = 20;
-bool=j<k    //bool is used to check the statement either true or false
+bool=j>k    //bool is used to check the statement either true or false
 console.log(bool);
 
-let user = 3;
-console.log(user);
-
+a = 10;
+console.log(a);
+console.log(typeof a);

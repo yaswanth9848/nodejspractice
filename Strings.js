@@ -1,5 +1,5 @@
 // Replacing string
-const a = "I am from Hyderabad"
+const a = "I am from Hyderabad" ;
 const b = a.replace("I am from Hyderabad" ," I am from Banglore"); //string.replace(old string,new string) is used to change string
 console.log(b);
 
@@ -36,7 +36,7 @@ const l = "Good Afternoon";
 console.log(l.search("f")); // string.search() is used to find the index no of string 
 
 //substring
-const m = "Google, Facebook";
+const m = "Google, Facebook  ";
 console.log(m.substring(3,8)); //string.substring(starting index, stop index) is used to 
 console.log(m.slice(8,16));
 
@@ -46,11 +46,11 @@ console.log(n.indexOf("n"));  //indexOf() is used to find the index number of a 
 
 //lastIndexof()
 const o = "Good Evening";
-console.log(o.lastIndexOf("n"));  //lastIndexOf() is used to find the last index number of a string
+console.log(o.lastIndexOf("g"));  //lastIndexOf() is used to find the last index number of a string
 
 //charAt()
 const p = "Welcome";
-console.log(p.charAt("4"));  //charAt() is used to find word in a string by giving index number 
+console.log(p.charAt("6"));  //charAt() is used to find word in a string by giving index number 
 
 //charCodeAt()
 const q = "Friday";
