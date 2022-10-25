@@ -5,18 +5,21 @@ const a = {
     city:"Hyderabad",
     State:"Telangana"
 }
-
-for(let  key in a)
+let res= " ";
+let l = a.length;
+for(let key in a) //for(let i=0;i<10;i++)
 {
-    console.log(key,a[key]);
+    res = a[key];
+console.log(`${key}=${res}`);
+
 }
 
 //2
 const mobiles = {
-     name:"redmi",country:"china",
-     name:"realme",country:"china",
-     name:"oppo",country:"china",
-     name:"Samsung",country:"korea" }
+     name1:"redmi",country1:"china",
+     name2:"realme",country2:"china",
+     name3:"oppo",country3:"china",
+     name4:"Samsung",country4:"korea" }
 
  for(const key in mobiles)
     {
@@ -33,20 +36,22 @@ const mobiles = {
 
 3.
 const bikes= {
-    Company:"Honda",name:"Unicorn",
-    Company:"Hero",name:"Glamour",
-    Company:"Bajaj",name:"Platina"
+    Company1:"Honda",name1:"Unicorn",
+    Company2:"Hero",name2:"Glamour",
+    Company3:"Bajaj",name3:"Platina"
 }
-for (const key in bikes)
+let r = "";
+for (let key in bikes)
 {
-    console.log(`bikes.${key} = ${bikes[key]}`);
+    r = bikes[key]
+    console.log(`${key} = ${r}`);
  }
 
 //4.apps
 const apps ={
-    name:"whatsapp",color:"green",
-    name:"facebook",color:"blue",
-    name:"Telegram",color:"blue",
+    name1:"whatsapp",color1:"green",
+    name2:"facebook",color2:"blue",
+    name3:"Telegram",color3:"blue",
 }
 
 for(const key in apps)
@@ -54,3 +59,18 @@ for(const key in apps)
     console.log(key,apps[key]);
 }
 
+//5.
+const school ={
+    name1:"Chaitanya",Branch:"Cse",
+    name2:"Sandeep",color2:"Ece",
+    name3:"kiran",color3:"civil",
+}
+for(const key in school)
+{
+    console.log(school,school[key]);
+}
+
+
+
+
+ 
