@@ -5,12 +5,12 @@ function hello()
         console.log("hello is called");
     }
 hello();
-function world(callback)
+function world(hello)
 {
     console.log("world is called");
 }
 world();
-world(hello);
+world(hello());
 //2.
 function A()
     {
@@ -22,7 +22,7 @@ function B(callback)
     console.log("B is called");
 }
 B();
-A(B);
+A(B());
 
 //3.
 
@@ -36,7 +36,7 @@ function Sai(callback)
     console.log("Sai is called");
 }
 Sai();
-Sai(Yaswanth);
+Sai(Yaswanth());
 function greet()
 {
     for(i=0;i<=10;i++)
@@ -55,7 +55,7 @@ function greet1()
     }
 }
 greet1();
-greet1(greet);
+greet1(greet());
 //4.
 function good()
 {
@@ -85,7 +85,7 @@ function good1()
     }
 }
 good1();
-good1(good)
+good1(good())
 //5.
 
 function great1()
@@ -113,4 +113,65 @@ function great2()
     }
 }
 great2()
-great2(great1);
+great2(great1());
+
+//6.
+function ctrl()
+{
+    console.log("hello");
+}
+function ctrl1()
+{
+    console.log("Good Morning");
+}
+ctrl()
+ctrl1(ctrl())
+//7 
+function add(a,b)
+{
+res = a+b;
+console.log(res);
+}
+function sub(a,b)
+{
+    res1 = a - b;
+    console.log(res1);
+}
+add(10,20);
+sub(10,20);
+//8
+function mul(a,b)
+{
+    res2 = a*b;
+    console.log(res2);
+}
+function div(a,b)
+{
+    res3 = a/b;
+    console.log(res3)
+}
+mul(10,20);
+div(10,2);
+//9
+function name1(m)
+{
+    console.log("person name is" + " "+ m)
+}
+function age(n)
+{
+    console.log("person age is "+" "+n)
+}
+name1("sai")
+age(20)
+//10
+function str(f)
+{
+    console.log("The original string is " +" "+ f)
+ strSplit = f.split('');
+ console.log("The splitted  string is " +" "+ strSplit)
+ strRev = strSplit.reverse();
+ console.log("The Reversed string is "+ " " +strRev)
+ strJoin = strRev.join('');
+ console.log("The joined string is " +" "+ strJoin)
+}
+str("ramu");
