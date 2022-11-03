@@ -32,8 +32,10 @@ const promiseTwo = (num1) =>
         {
     for(i =0;i<num1;i++)
     {
-    resolve2(i)
+        console.log(i)
+    
     }
+    resolve2(i)
        }
        catch(err)
     {
