@@ -11,4 +11,7 @@ const promise4 = new Promise((resolve,reject) =>
 Promise.all([promise1,promise2,promise4]).then((result) =>
 {
     console.log(result);
+}).catch((err) =>
+{
+    console.log(err);
 })
