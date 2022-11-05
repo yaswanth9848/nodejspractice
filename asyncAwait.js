@@ -119,3 +119,30 @@ const promiseFive =(arr) =>
     } 
 }
 promiseFive([10,20,30,40,"Java"]);
+
+//6. Adding
+
+  function1=(a,b)=>{
+    setTimeout(() => {
+        res =(a+b);
+        console.log(res)
+    }, 1000)
+}
+ add=async()=>{
+     res1= await function1(10,30);
+    console.log(res1);
+}
+add();
+
+//7.
+async function Weather(degree){
+    try{
+        const data= await Promise.resolve(`Temp is ${degree}`);
+        console.log(data);
+    }
+    catch(error){
+        console.log(error);
+    }
+    }
+
+Weather(27)
