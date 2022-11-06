@@ -1,7 +1,7 @@
 //Programs on array using map function
 // map(callback(currentvalue,index,arr)) method calls the specified function for every array element and returns the new array
 //1. Printing even numbers in array
-const arr1 = [100,200,300,400,505]
+const arr1 = [100,200,300,400,505,600]
 {
     const output1= arr1.map(function even(x)
     {
