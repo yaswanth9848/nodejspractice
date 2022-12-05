@@ -1,0 +1,10 @@
+Welcome to Mobiles Page
+<% if (model) { %>
+ <h1> Model number of <%=title%> is <%=  model %>  Price is <%= Price %></h1>
+<% } else{%>
+  <h1> Model number of <%=title%> is not mentioned </h1>
+  <%}%>
+
+  <% for (var i =1; i <=10;  i++ ) { %>
+   <%= i %> 
+    <% } %>

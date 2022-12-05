@@ -72,6 +72,7 @@ class greet
 const result4= new greet()
 console.log(result4.forMethod());
 
+
 //5. using  while in class
 class great
 {
