@@ -1,0 +1,15 @@
+<%- include ('./partials/header')-%>
+<form action='/updateNewData' method='POST'>
+    <!-- Creating the parameter Username as type= "text"-->
+   
+    <label>name: </label>
+    <input type="text" value=<%= dataToBeUpdated.name %> name="name"><br><br>
+    <!-- Creating the parameter Email as type= "text"-->
+    <label>company: </label>
+    <input type="text" value=<%= dataToBeUpdated.company %> name="company"><br><br>
+    <label>FuelType: </label>
+    <input type="text" value=<%= dataToBeUpdated.FuelType %> name="FuelType"><br><br>
+    <label>capacity: </label>
+<input type="text"  value =<%= dataToBeUpdated.capacity %> name="capacity"><br><br>
+    <button>Submit</button>
+</form>

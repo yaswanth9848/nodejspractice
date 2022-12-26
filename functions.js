@@ -201,7 +201,6 @@ function logical()
  }
 }
 logical();
-
 //12. Data types using functions
 function data()
 {
@@ -367,4 +366,3 @@ function trim()
 
 }
 trim()
-

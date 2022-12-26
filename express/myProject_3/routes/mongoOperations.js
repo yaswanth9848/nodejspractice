@@ -10,6 +10,14 @@ router.get('/getData',async  function(req, res, next) {
   res.render('showData', {data});
 });
 
+router.get('/getData',async  function(req, res, next) {
+  // code here to connect database and get data from collection.
+  const queryData = req.query;
+const data = await (await collection).find({FuelType:queryData.Petrol}).toArray();
+res.render('showData', {data});
+});
+
+
 router.post('/addData',async  function(req, res, next) {
   // code here to connect database and get data from collection.
 const postedData = req.body;

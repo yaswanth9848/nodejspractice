@@ -27,7 +27,7 @@ class Caluclator
 
 
 const res = new  Caluclator(10,20);
-const res1 = new  Caluclator(20,40);
+const res1 = new  Caluclator(2,5);
 console.log(res.Add());
 console.log(res.Sub());
 console.log(res.Mul());
