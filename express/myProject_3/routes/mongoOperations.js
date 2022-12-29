@@ -5,7 +5,11 @@ var router = express.Router();
 /* GET home page. */
 router.get('/getData',async  function(req, res, next) {
     // code here to connect database and get data from collection.
- const data = await (await collection).find().toArray();
+res.cookie('sampleCookie','Value is 100',{maxYear:1000});
+res.cookie('cookie1','Yaswanth');
+
+
+    const data = await (await collection).find().toArray();
 
   res.render('showData', {data});
 });

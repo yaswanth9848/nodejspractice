@@ -15,6 +15,7 @@ const deleteData = require('./routes/deleteData');
 const login = require('./routes/login');
 const register = require('./routes/register');
 const cookie = require('./routes/cookie');
+const logout = require('./routes/logout.js'); 
 
 var app = express();
 
@@ -28,6 +29,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/',(req, res, next)=>{
+  console.log("Server is running successfully");
+ next();
+});
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.get('/mobiles',mobileRouter);
@@ -48,6 +53,7 @@ app.post('/login',login);
 app.post('/register',register);
 app.get('/register',register);
 app.get('/cookie',cookie);
+app.get('/logout',logout);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
