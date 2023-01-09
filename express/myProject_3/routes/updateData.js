@@ -1,6 +1,8 @@
 var express = require('express');
 const collection  = require('../utils/mongoConnection').connection();
 var router = express.Router();
+const jwt = require('jsonwebtoken');
+
 
 /* GET home page. */
 router.get('/getDataToBeUpdated', async function(req, res, next) {
@@ -12,17 +14,19 @@ router.get('/getDataToBeUpdated', async function(req, res, next) {
 router.post('/updateNewData', async function(req, res, next) {
     const postedData = req.body;
     console.log(postedData);
-    console.log(postedData.capacity);
+    console.log(req.cookies.cookie9);
 
-    try{
+    try {
+      //console.log(token);
+      var decoded = jwt.verify(req.cookies.cookie9, 'sample@123');
+      console.log(decoded);
       const updateResult = await (await collection).updateOne({name:postedData.name},{$set:{company:postedData.company,FuelType:postedData.FuelType,capacity:postedData.capacity}});
       const data = await (await collection).find().toArray();
       res.render('showData', {data});
-    }
-    catch(err)
-    {
-        console.log(err);
-       res.status(500).send('Error in insertion');
+      }
+      catch(err) {
+        console.error(err);
+        res.redirect('/userlogin');
     }
     });
   

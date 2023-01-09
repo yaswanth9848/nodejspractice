@@ -1,6 +1,13 @@
-<%- include ('./partials/header')-%>
+<%- include ('./partials/header')-%> 
 <html>
-  <head>
+  <ul>
+    <li>
+    <a href='/adminData'>Announcements</a>    
+    </li>
+    </ul>
+    
+    
+  <head> 
   <style>
     table, th, td {
       border: 1px solid rgb(138, 12, 12);
@@ -12,9 +19,9 @@
 </style>
 </head>
 <body> 
- . <a href = '/openForm'>Click to Add New Data</a><br>
- .<a href = '/register'>Register Form</a><br>
- .<a href = '/logout'>Logout</a>
+ <li><a href ='/openForm'>Click to Add New Data</a><br></li>
+
+ <li><a href ='/userlogout'>  Logout</a></li>
  
 <form method = 'GET' id = 'form' action ='/getDataToBeUpdated'>
 <table>

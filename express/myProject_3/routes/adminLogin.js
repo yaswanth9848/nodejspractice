@@ -3,13 +3,14 @@ var router = express.Router();
 const collection  = require('../utils/mongoConnection').connection();
 var cookieParser = require('cookie-parser');
 router.use(cookieParser());
+const jwt = require('jsonwebtoken');
 
 /* GET home page. */
-router.get('/login', function(req, res, next) {
-  res.render('login',{error:null});
+router.get('/adminLogin', function(req, res, next) {
+  res.render('adminLogin',{error:null});
 });
 
-router.post('/login',async function (req,res,next)
+router.post('/adminLogin',async function (req,res,next)
 {
 
   const {email,password} = req.body;
@@ -21,19 +22,17 @@ router.post('/login',async function (req,res,next)
       return res.status(400).send("email not found");
 
       if(data.password === password){
-        res.cookie('hiii','Value is 200',{maxYear:1000});
-        res.cookie('cookie2','Yaswanth');
-        res.cookie('cookie5','Express');
-        res.cookie('cookie6','Express');
-        res.cookie('cookie7','javaScript');
-        res.render('showData', {data:data1});
+        const token = jwt.sign({user:email}, 'sample@123');
+        res.cookie('cookie9',token,{maxAge:60000});
+        console.log(token);        
+        res.render('adminData', {data:data1});
         return;
       }else {
-        return res.render('loginPage',{error:'Incorrect credentials'});
+        return res.render('adminLogin',{error:'Incorrect credentials'});
       }       
   }catch(err)
   {
-    res.status(500).send('Login Fail');
+    res.status(500).send('Admin Login Fail');
   }
 });
 

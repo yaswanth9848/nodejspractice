@@ -3,8 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 
-router.use('/',(req, res, next)=>{
-  console.log("Server is running successfully");
+router.use('/',(req, res, next)=>{             // middleware
+  console.log("Server is running successfully");      
  next();
 });
 

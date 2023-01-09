@@ -1,20 +1,22 @@
 var express = require('express');
 var router = express.Router();
 const collection  = require('../utils/mongoConnection').connection();
-
+const jwt = require('jsonwebtoken');
 
 /* GET home page. */
 router.get('/deleteData', async  function(req, res, next) {
     const name = req.query.name;
-    try{
-    const deleteResult = await (await collection).deleteOne({name});
+    try {
+      var decoded = jwt.verify(req.cookies.cookie9,'sample@123');
+     console.log(decoded);
+     const deleteResult = await (await collection).deleteOne({name});
+    console.log(deleteResult);
     const data = await (await collection).find().toArray();
     res.render('showData', {data});
     }catch(err)
     {
         console.log(err)
-    }
-  res.status(500).send('Some Error in Delete Operation');
-});
-
+      res.redirect('/userlogin');
+      }
+    });
 module.exports = router;

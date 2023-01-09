@@ -4,11 +4,11 @@ var router = express.Router();
 
 
 /* GET home page. */
-router.get('/register', function(req, res, next) {
+router.get('/userRegister', function(req, res, next) {
     
-  res.render('register');
+  res.render('userRegister');
 });
-router.post('/register', async function(req, res, next) {
+router.post('/userRegister', async function(req, res, next) {
   const postedData = req.body;
   try{
       

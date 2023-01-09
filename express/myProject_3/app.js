@@ -12,10 +12,13 @@ const mongoOperations = require('./routes/mongoOperations');
 const addNewData = require('./routes/addNewData.js');
 const updateData = require('./routes/updateData');
 const deleteData = require('./routes/deleteData');
-const login = require('./routes/login');
-const register = require('./routes/register');
+const userlogin = require('./routes/userlogin');
+const userRegister = require('./routes/userRegister');
 const cookie = require('./routes/cookie');
-const logout = require('./routes/logout.js'); 
+const userlogout = require('./routes/userlogout.js'); 
+const adminRegister = require('./routes/adminRegister');
+const adminLogin = require('./routes/adminLogin');
+const adminLogout = require('./routes/adminLogout.js')
 
 var app = express();
 
@@ -48,12 +51,17 @@ app.post('/updateNewData',updateData);
 
 app.get('/deleteData',deleteData);
 
-app.get('/login',login);
-app.post('/login',login);
-app.post('/register',register);
-app.get('/register',register);
+app.get('/userlogin',userlogin);
+app.post('/userlogin',userlogin);
+app.post('/userRegister',userRegister);
+app.get('/userRegister',userRegister);
 app.get('/cookie',cookie);
-app.get('/logout',logout);
+app.get('/userlogout',userlogout);
+app.post('/adminRegister',adminRegister);
+app.get('/adminRegister',adminRegister);
+app.get('/adminLogin',adminLogin);
+app.post('/adminLogin',adminLogin);
+app.get('/adminLogout',adminLogout);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
