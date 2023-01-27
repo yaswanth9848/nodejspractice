@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const collection  = require('../utils/mongoConnection').connection();
+const collection2  = require('../utils/mongoConnection').connection1();
 var cookieParser = require('cookie-parser');
 router.use(cookieParser());
 const jwt = require('jsonwebtoken');
@@ -18,6 +19,7 @@ router.post('/adminLogin',async function (req,res,next)
   try {
       const data = await (await collection).findOne({email : email});
       const data1 = await (await collection).find().toArray();
+      const data2 = await (await collection2).find().toArray();
       if (!data.email ) 
       return res.status(400).send("email not found");
 
@@ -25,7 +27,7 @@ router.post('/adminLogin',async function (req,res,next)
         const token = jwt.sign({user:email}, 'sample@123');
         res.cookie('cookie9',token,{maxAge:60000});
         console.log(token);        
-        res.render('adminData', {data:data1});
+        res.render('adminData', {data:data1,data:data2});
         return;
       }else {
         return res.render('adminLogin',{error:'Incorrect credentials'});

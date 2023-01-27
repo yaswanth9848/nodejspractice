@@ -1,12 +1,5 @@
 <%- include ('./partials/header')-%> 
 <html>
-  <ul>
-    <li>
-    <a href='/adminData'>Announcements</a>    
-    </li>
-    </ul>
-    
-    
   <head> 
   <style>
     table, th, td {
@@ -21,9 +14,15 @@
 <body> 
  <li><a href ='/openForm'>Click to Add New Data</a><br></li>
 
- <li><a href ='/userlogout'>  Logout</a></li>
- 
+ <li><a href ='/userlogout'> User Logout</a></li>
+     
 <form method = 'GET' id = 'form' action ='/getDataToBeUpdated'>
+  <div>
+ <!--    <label for = "Announcement">Announcement: </label>
+    <input type="text" placeholder="..." name="Announcement"><br>  -->
+    <span class ="label">Announcement</span> 
+   <p ><%= adminShowData.Announcement %></p> 
+  </div>
 <table>
     <tr>
        <th>name</th>
@@ -46,7 +45,6 @@
     <% } %>
  </table>
  </form>
-
  
 </body>
 </html>

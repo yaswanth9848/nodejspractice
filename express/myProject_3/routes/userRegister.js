@@ -1,5 +1,6 @@
 var express = require('express');
 const collection  = require('../utils/mongoConnection').connection();
+const collection2  = require('../utils/mongoConnection').connection1();
 var router = express.Router();
 
 
@@ -14,7 +15,8 @@ router.post('/userRegister', async function(req, res, next) {
       
     const insertResult = await (await collection).insertOne(postedData);
     const data = await (await collection).find().toArray();
-    res.render('showData', {data});
+    const data1 = await (await collection2).find().toArray();
+    res.render('showData', {data:data});
     }
        
   catch(err)

@@ -1,0 +1,39 @@
+<html>
+  <head> 
+  <style>
+    table, th, td {
+      border: 1px solid rgb(138, 12, 12);
+      border-collapse: collapse;
+    }
+    th, td {
+      background-color: #96D4D4;
+    }
+</style>
+</head>
+<body> 
+ <li><a href ='/openForm'>Click to Add New Data</a><br></li>
+<form method = 'GET' id = 'form' action ='/getData' >
+  
+<table>
+    <tr>
+       <th>name</th>
+       <th>company</th>
+       <th>fueltype</th>
+       <th>capacity</th>
+    </tr>
+ 
+    <% for (let i = 0; i <data.length; i++) { %>
+     <tr>
+       <td style="color:rgb(0, 21, 255)"><%= data[i].name %></td>
+       <td><%= data[i].company %></td>
+       <td><%= data[i].fueltype %></td>
+       <td><%= data[i].capacity %></td>
+     </tr>    
+    <% } %>
+ </table>
+ </form>
+ 
+</body>
+</html>
+
+

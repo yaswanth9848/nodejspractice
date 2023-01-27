@@ -6,9 +6,21 @@ const connection = async () =>
     try
     {
     await client.connect();
-   // const db = client.db('node_3');
     const collection =  client.db('node_1').collection('Bikes');
-    return Promise.resolve(collection);
+        return Promise.resolve(collection);
+    }catch(err){
+        return Promise.reject(err);
+    }
+
+};
+
+const connection1 = async () =>
+{
+    try
+    {
+    await client.connect();
+    const collection2 = client.db('node_1').collection('announcement');
+        return Promise.resolve(collection2);
     }catch(err){
         return Promise.reject(err);
     }
@@ -16,3 +28,4 @@ const connection = async () =>
 };
 
 exports.connection = connection;
+exports.connection1= connection1;

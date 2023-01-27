@@ -1,5 +1,6 @@
 var express = require('express');
 const collection  = require('../utils/mongoConnection').connection();
+const collection2  = require('../utils/mongoConnection').connection1();
 var router = express.Router();
 const jwt = require('jsonwebtoken');
 
@@ -22,7 +23,8 @@ router.post('/updateNewData', async function(req, res, next) {
       console.log(decoded);
       const updateResult = await (await collection).updateOne({name:postedData.name},{$set:{company:postedData.company,FuelType:postedData.FuelType,capacity:postedData.capacity}});
       const data = await (await collection).find().toArray();
-      res.render('showData', {data});
+      const data1 = await (await collection2).find().toArray();
+      res.render('showData', {data:data});
       }
       catch(err) {
         console.error(err);

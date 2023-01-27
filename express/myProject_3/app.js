@@ -18,8 +18,9 @@ const cookie = require('./routes/cookie');
 const userlogout = require('./routes/userlogout.js'); 
 const adminRegister = require('./routes/adminRegister');
 const adminLogin = require('./routes/adminLogin');
-const adminLogout = require('./routes/adminLogout.js')
-
+const adminLogout = require('./routes/adminLogout');
+//const announcement = require('./routes/announcement.js');
+const adminData = require('./routes/adminData');
 var app = express();
 
 // view engine setup
@@ -62,6 +63,9 @@ app.get('/adminRegister',adminRegister);
 app.get('/adminLogin',adminLogin);
 app.post('/adminLogin',adminLogin);
 app.get('/adminLogout',adminLogout);
+app.post('/adminData',adminData);
+app.get('/adminData',adminData);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

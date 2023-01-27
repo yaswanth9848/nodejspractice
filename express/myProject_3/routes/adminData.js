@@ -1,18 +1,18 @@
 var express = require('express');
+var router = express.Router();
 const collection  = require('../utils/mongoConnection').connection();
 const collection2  = require('../utils/mongoConnection').connection1();
-var router = express.Router();
 var cookieParser = require('cookie-parser');
 router.use(cookieParser());
 const jwt = require('jsonwebtoken');
 
-
-/* GET home page. */
-router.get('/openForm', function(req, res, next) {
-  res.render('showForm');
+router.get('/adminData', function(req, res, next) {
+  
+  res.render('adminData');
 });
 
-router.post('/addNewData', async function(req, res, next) {
+
+router.post('/adminData', async function(req, res, next) {
     const postedData = req.body;
     console.log(postedData);
     console.log(req.cookies.cookie9);
@@ -20,14 +20,15 @@ router.post('/addNewData', async function(req, res, next) {
       try {  
         var decoded = jwt.verify(req.cookies.cookie9,'sample@123');
         console.log(decoded);
-        const insertResult = await (await collection).insertOne(postedData);
+        const insertResult = await (await collection2).insertOne(postedData);
+        console.log(insertResult);
         const data = await (await collection).find().toArray();
         const data1 = await (await collection2).find().toArray();
-        res.render('showData', {data:data});
+        res.render('adminData', {data:data,data:data1});
         }
         catch(err) {
           console.error(err);
-          res.redirect('/userlogin');
+          res.redirect('/adminLogin');
       }
     });
   

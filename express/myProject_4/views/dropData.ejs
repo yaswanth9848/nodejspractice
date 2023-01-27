@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <h1>Selected Data</h1>
+    </head>
+    <body>
+        <table>
+            <tr>
+               <th>name</th>
+               <th>company</th>
+               <th>fueltype</th>
+               <th>capacity</th>
+            </tr>
+         
+ <% for (let i = 0; i <data.length; i++) { %>
+             <tr>
+               <td style="color:rgb(4, 0, 255)"><%= data[i].name %></td>
+               <td><%= data[i].company %></td>
+               <td><%= data[i].fueltype %></td>
+               <td><%= data[i].capacity %></td>
+             </tr>    
+            <% } %>
+         </table>
+        
+    </body>
+</html>
